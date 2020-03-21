@@ -12,7 +12,7 @@ class StringMethodsTest {
 		assertEquals("A", StringMethods.longerString("A", ""));
 		assertEquals("equal", StringMethods.longerString("equal", "equal"));
 	}
-	
+
 	@Test
 	void testFormatSpaces() {
 		assertEquals("This String should not chage", StringMethods.formatSpaces("This String should not chage"));
@@ -26,7 +26,7 @@ class StringMethodsTest {
 		assertEquals("John A", StringMethods.lineLeader(" John C   ", "     John B ", "           John A  "));
 		assertEquals("Charley F", StringMethods.lineLeader("  Allison Z", " Brad H ", " Charley F "));
 	}
-	
+		
 	@Test
 	void testNumeralSum() {
 		assertEquals(0, StringMethods.numeralSum(""));
@@ -42,7 +42,7 @@ class StringMethodsTest {
 		assertEquals(3, StringMethods.substringCount("Here I'm counting spaces"," "));
 		assertEquals(0, StringMethods.substringCount("There shoudn't be matches here", "tuna"));
 	}
-	
+	/*
 	@Test
 	void testEncrypt() {
 		assertEquals("KwYPDww=", StringMethods.encrypt("Hello", 'c'));
@@ -86,5 +86,5 @@ class StringMethodsTest {
 		assertFalse(StringMethods.palindrome("This is not a palendrome"));
 		assertFalse(StringMethods.palindrome("This is close but not quite right etiuq ton tub esolc si sihT"));
 	}
-	
+	*/
 }

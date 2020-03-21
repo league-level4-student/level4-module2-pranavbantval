@@ -32,13 +32,27 @@ public class StringMethods {
 
 	// Given Strings s1 and s2, return the longer String
 	public static String longerString(String s1, String s2) {
+		if(s1.length()>=s2.length()) {
+			return s1;
+		}
+		else if(s2.length()>s1.length()) {
+			return s2;
+		}
+		else {
 		return null;
-	}
+		}
+		}
 
 	
 	// if String s contains the word "underscores", change all of the spaces to underscores
 	public static String formatSpaces(String s) {
-		return null;
+			
+		
+		if(s.contains("underscores")) {
+			s=s.replace(' ', '_');
+		}
+		
+		return s;
 	}
 
 	
@@ -46,19 +60,48 @@ public class StringMethods {
 	// You cannot assume there are no extra spaces around the name, but you can
 	// assume there is only one space between the first and last name
 	public static String lineLeader(String s1, String s2, String s3) {
-		return null;
+		s1=s1.trim();
+		s2=s2.trim();
+		s3=s3.trim();
+	int n1 = Character.getNumericValue(s1.charAt(s1.length()-1));
+	int n2= Character.getNumericValue(s2.charAt(s2.length()-1));
+	int n3 = Character.getNumericValue(s3.charAt(s3.length()-1));
+	if(n1<n2&&n1<n3) {
+		return s1;
+	}
+	else if(n2<n1&&n2<n3) {
+		return s2;
+	}
+	else if(n3<n1&&n3<n2) {
+		return s3;
+	}
+	return null;
 	}
 	
 	
 	// Return the sum of all numerical digits in the String
 	public static int numeralSum(String s) {
-		return 0;
+		int x = 0;
+		for (int i = 0; i < s.length(); i++) {
+			if(Character.isDigit(s.charAt(i))) {
+				Character c = s.charAt(i);
+				x += Integer.parseInt(c.toString());
+			}
+		}
+		return x;
 	}
 	
 	
 	// Return the number of times String substring appears in String s
 	public static int substringCount(String s, String substring) {
-		return 0;
+		int x = 0;
+		for (int i = 0; i < s.length(); i++) {
+		if(s.contains(substring)) {
+			s=s.replaceFirst(substring, "");
+			x += 1;
+		}
+		}
+		return x;
 	}
 
 	// Call Utitilities.encrypt to encrypt String s

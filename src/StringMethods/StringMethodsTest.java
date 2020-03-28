@@ -42,7 +42,7 @@ class StringMethodsTest {
 		assertEquals(3, StringMethods.substringCount("Here I'm counting spaces"," "));
 		assertEquals(0, StringMethods.substringCount("There shoudn't be matches here", "tuna"));
 	}
-	/*
+	
 	@Test
 	void testEncrypt() {
 		assertEquals("KwYPDww=", StringMethods.encrypt("Hello", 'c'));
@@ -73,7 +73,7 @@ class StringMethodsTest {
 		assertEquals(0, StringMethods.distance("bb", "b"));
 		
 	}
-	
+	/*
 	@Test
 	void testPalindrome() {
 		assertTrue(StringMethods.palindrome("ABA"));

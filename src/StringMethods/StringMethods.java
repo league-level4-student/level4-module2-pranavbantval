@@ -134,9 +134,7 @@ public class StringMethods {
 		int y = s.indexOf(substring)+substring.length();
 		int x = s.lastIndexOf(substring);
 		s=s.substring(y, x);
-		System.out.println(s);
 		int n = s.length();
-		System.out.println(n);
 		return n;
 	}		
 
@@ -144,6 +142,15 @@ public class StringMethods {
 	// palindromes are words or phrases are read the same forward as backward.
 	// HINT: ignore/remove all punctuation and spaces in the String
 	public static boolean palindrome(String s) {
+			if(s.contains(",")||s.contains(".")||s.contains("?")||s.contains(" ")||
+			s.contains("-")	){
+				s=s.replaceAll(",", "");
+				s=s.replaceAll("?", "");
+				s=s.replaceAll("-", "");
+				s=s.replaceAll(" ", "");
+				s=s.replaceAll(".", "");
+			}
+		
 		return true;
 	}
 

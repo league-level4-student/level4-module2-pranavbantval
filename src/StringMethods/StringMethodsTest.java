@@ -73,7 +73,7 @@ class StringMethodsTest {
 		assertEquals(0, StringMethods.distance("bb", "b"));
 		
 	}
-	/*
+	
 	@Test
 	void testPalindrome() {
 		assertTrue(StringMethods.palindrome("ABA"));
@@ -86,5 +86,5 @@ class StringMethodsTest {
 		assertFalse(StringMethods.palindrome("This is not a palendrome"));
 		assertFalse(StringMethods.palindrome("This is close but not quite right etiuq ton tub esolc si sihT"));
 	}
-	*/
+	/**/
 }

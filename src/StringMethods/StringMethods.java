@@ -116,14 +116,14 @@ public class StringMethods {
 	// You can assume there are no punctuation marks between words
 	public static int wordsEndsWithSubstring(String s, String substring) {
 		int x = 0;
-		substring=substring + " ";
+		substring = substring + " ";
 		for (int i = 0; i < s.length(); i++) {
-			
-		
-		if(s.contains(substring)) {
-			x++;
-			s=s.replaceFirst(substring, " ");
-		}}
+
+			if (s.contains(substring)) {
+				x++;
+				s = s.replaceFirst(substring, " ");
+			}
+		}
 		return x;
 	}
 
@@ -131,27 +131,45 @@ public class StringMethods {
 	// of String substring and the final occurrence
 	// You can assume that substring will appear at least twice
 	public static int distance(String s, String substring) {
-		int y = s.indexOf(substring)+substring.length();
+		int y = s.indexOf(substring) + substring.length();
 		int x = s.lastIndexOf(substring);
-		s=s.substring(y, x);
+		s = s.substring(y, x);
 		int n = s.length();
 		return n;
-	}		
+	}
 
 	// Return true if String s is a palindrome
 	// palindromes are words or phrases are read the same forward as backward.
 	// HINT: ignore/remove all punctuation and spaces in the String
 	public static boolean palindrome(String s) {
-			if(s.contains(",")||s.contains(".")||s.contains("?")||s.contains(" ")||
-			s.contains("-")	){
-				s=s.replaceAll(",", "");
-				s=s.replaceAll("?", "");
-				s=s.replaceAll("-", "");
-				s=s.replaceAll(" ", "");
-				s=s.replaceAll(".", "");
-			}
 		
-		return true;
+		for (int i = 0; i < s.length(); i++) {
+			String test = Character.toString(s.charAt(i));
+			if (!test.equalsIgnoreCase("a") && !test.equalsIgnoreCase("b") && !test.equalsIgnoreCase("c")
+					&& !test.equalsIgnoreCase("d") && !test.equalsIgnoreCase("e") && !test.equalsIgnoreCase("f")
+					&& !test.equalsIgnoreCase("g") && !test.equalsIgnoreCase("h") && !test.equalsIgnoreCase("j")
+					&& !test.equalsIgnoreCase("k") && !test.equalsIgnoreCase("l") && !test.equalsIgnoreCase("m")
+					&& !test.equalsIgnoreCase("n") && !test.equalsIgnoreCase("o") && !test.equalsIgnoreCase("p")
+					&& !test.equalsIgnoreCase("q") && !test.equalsIgnoreCase("r") && !test.equalsIgnoreCase("s")
+					&& !test.equalsIgnoreCase("t") && !test.equalsIgnoreCase("u") && !test.equalsIgnoreCase("v")
+					&& !test.equalsIgnoreCase("w") && !test.equalsIgnoreCase("x") && !test.equalsIgnoreCase("y")
+					&& !test.equalsIgnoreCase("z") && !test.equalsIgnoreCase("i")) {
+				s=s.replace(test, "");
+			}
+		} 
+		if(s.contains("€")) {
+			s=s.replaceAll("€", "");
+		}
+		String x = "";
+		for (int i = s.length()-1; i >= 0; i--) {
+			x+= Character.toString(s.charAt(i));
+			}
+		System.out.println(x);
+		System.out.println(s);
+		if (x.equalsIgnoreCase(s)) {
+			return true;
+		}
+		return false;
 	}
 
 }
